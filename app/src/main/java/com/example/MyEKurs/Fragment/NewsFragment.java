@@ -37,11 +37,6 @@ public class NewsFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /** TODO
-     * benerin error RecyclerView: No adapter attached; skipping layout (LogCat)
-     * dan kemungkinan toast tdk keluar (line 73)
-     */
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
