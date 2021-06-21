@@ -44,15 +44,16 @@ public class NewsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_news, container, false);
         recyclerView = rootView.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        String country = getCountry();
-        retrieveJson(country,API_KEY);
+        String country = "id";
+        String category = "business";
+        retrieveJson(country,category,API_KEY);
 
         return rootView;
     }
 
-    public void retrieveJson(String country, String apiKey) {
+    public void retrieveJson(String country,String category, String apiKey) {
 
-        Call<Headlines> call = ApiClient.getInstance().getApi().getHeadlines(country,apiKey);
+        Call<Headlines> call = ApiClient.getInstance().getApi().getHeadlines(country,category,apiKey);
         call.enqueue(new Callback<Headlines>() {
             @Override
             public void onResponse(Call<Headlines> call, Response<Headlines> response) {
